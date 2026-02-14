@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MohammadMappingz</title>
+
+<style>
+
+/* ================= BASE ================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#f8f9fb;
+color:#111;
+transition:0.4s;
+overflow-x:hidden;
+}
+
+/* ================= DARK MODE ================= */
+
+body.dark{
+background:#0e0e11;
+color:white;
+}
+
+body.dark nav{
+background:rgba(20,20,25,0.7);
+}
+
+body.dark .card{
+background:rgba(40,40,50,0.6);
+border:1px solid rgba(255,255,255,0.05);
+}
+
+/* ================= LOADER ================= */
+
+#loader{
+position:fixed;
+width:100%;
+height:100vh;
+background:white;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+transition:1s;
+}
+
+body.dark #loader{
+background:#0e0e11;
+}
+
+.loader{
+width:70px;
+height:70px;
+border:6px solid #ddd;
+border-top:6px solid black;
+border-radius:50%;
+animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+100%{transform:rotate(360deg);}
+}
+
+/* ================= PROGRESS BAR ================= */
+
+#progress{
+position:fixed;
+top:0;
+left:0;
+height:4px;
+background:black;
+width:0%;
+z-index:999;
+}
+
+/* ================= NAV ================= */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+padding:15px 30px;
+background:rgba(255,255,255,0.7);
+backdrop-filter:blur(15px);
+border-bottom:1px solid #eee;
+z-index:998;
+}
+
+nav a{
+text-decoration:none;
+color:inherit;
+margin-left:20px;
+font-weight:500;
+}
+
+.toggle-btn{
+cursor:pointer;
+padding:6px 12px;
+border-radius:20px;
+background:black;
+color:white;
+font-size:12px;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding-top:80px;
+}
+
+.hero img{
+width:180px;
+height:180px;
+border-radius:50%;
+object-fit:cover;
+box-shadow:0 30px 90px rgba(0,0,0,0.2);
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-18px);}
+}
+
+.hero h1{
+font-size:50px;
+margin-top:20px;
+}
+
+.hero p{
+opacity:0.6;
+}
+
+/* ================= SECTIONS ================= */
+
+section{
+padding:120px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+.hidden{
+opacity:0;
+transform:translateY(60px);
+transition:1s ease;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* ================= CARDS ================= */
+
+.card{
+background:rgba(255,255,255,0.7);
+backdrop-filter:blur(20px);
+border-radius:25px;
+padding:40px;
+margin-bottom:50px;
+box-shadow:0 20px 60px rgba(0,0,0,0.08);
+transition:0.5s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 30px 80px rgba(0,0,0,0.15);
+}
+
+/* ================= GRID ================= */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+/* ================= NEWS IMAGE ================= */
+
+.news-img{
+width:100%;
+border-radius:15px;
+margin:20px 0;
+}
+
+/* ================= COUNTER ================= */
+
+.counter{
+font-size:40px;
+font-weight:bold;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+background:#eaeaea;
+padding:60px 20px;
+text-align:center;
+}
+
+body.dark footer{
+background:#16161d;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+.hero h1{font-size:32px;}
+nav{padding:10px 15px;}
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="loader"><div class="loader"></div></div>
+<div id="progress"></div>
+
+<nav>
+<div><strong>MohammadMappingz</strong></div>
+<div>
+<a href="#about">About</a>
+<a href="#history">History</a>
+<a href="#news">News</a>
+<a href="#join">Join</a>
+<span class="toggle-btn" onclick="toggleDark()">Dark Mode</span>
+</div>
+</nav>
+
+<div class="hero">
+<img src="https://yt3.googleusercontent.com/-63MCI4Sv4dw9kqT4y-NqaweWsbJWHAosCZL03aXJx2tr_f2MV41oIo-8AhWtsNgsCyG1sHC=s160-c-k-c0x00ffffff-no-rj" alt="MohammadMappingz">
+<h1>MohammadMappingz</h1>
+<p>Norwegian Geomapper 🇳🇴 • Akershus • Aviation & Geomapping</p>
+</div>
+
+<section id="about" class="hidden">
+<div class="card">
+<h2>About</h2>
+<p>
+MohammadMappingz is a Norwegian Geomapper living in Akershus county.
+He is 13 years old and passionate about world building.
+</p>
+<p>
+He enjoys Euro Truck Simulator 2, MSFS and TSW5.
+He also wants to teach others Geomapping.
+</p>
+
+<div class="grid">
+<div>
+<div class="counter" data-target="1440">0</div>
+<p>Subscribers</p>
+</div>
+<div>
+<div class="counter" data-target="250">0</div>
+<p>Videos</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="history" class="hidden">
+<div class="card">
+<h2>Geomapping & YouTube History</h2>
+<p>
+Joined Geomapping on 26.04.2024 after being inspired by Isaakthemapper.
+Started on Nintendo before getting a PC.
+Lost the first world but came back stronger.
+</p>
+<p>
+Started YouTube seriously in July 2024.
+Grew after uploading the Filling Countries video.
+Now at 1.44K subscribers.
+</p>
+</div>
+</section>
+
+
+<section id="news" class="hidden">
+<div class="card">
+
+<h2>News – Small Scale Projects</h2>
+<p>Click the update below to read more</p>
+
+<div style="margin-top:30px; cursor:pointer;" onclick="toggleNews('news1')">
+
+<h3>Small Scale World Building Started</h3>
+<p><strong>Date:</strong> 21.02.2025</p>
+
+<img src="https://i.imgur.com/1nirryk_d.webp?maxwidth=1520&fidelity=grand" class="news-img" alt="Small Scale Preview">
+
+<div id="news1" style="display:none; margin-top:20px; border-top:1px solid #ccc; padding-top:20px;">
+
+<p>
+A brand new Small Scale World Building project has officially started.
+From 21.02.2025, Saturday streams will focus on building and expanding the world.
+</p>
+
+<p>
+This project aims to improve quality, realism and scale accuracy.
+Future updates, screenshots and development logs will be added here.
+</p>
+
+<p>
+More news will be posted soon as the project continues.
+Stay tuned for new updates.
+</p>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="hidden">
+<div class="card">
+<h2>My Favorite Geomappers</h2>
+<div class="grid">
+<div><h3>JensyJames</h3></div>
+<div><h3>Isaakthemapper</h3></div>
+<div><h3>Slushy</h3></div>
+<div><h3>YASEEN</h3></div>
+<div><h3>K10 Productions</h3></div>
+<div><h3>Reichsmapping</h3></div>
+<div><h3>QuebeckerMCMappingz</h3></div>
+<div><h3>Mabon</h3></div>
+<div><h3>MC Atlas</h3></div>
+<div><h3>Strayan</h3></div>
+</div>
+</div>
+</section>
+
+<section class="hidden">
+<div class="card">
+<h2>Geomappers I Don’t Like</h2>
+<div class="grid">
+<div><h3>McGeoMapping</h3></div>
+<div><h3>Shahin Karata</h3></div>
+<div><h3>New Jersey</h3></div>
+</div>
+</div>
+</section>
+
+<section id="join" class="hidden">
+<div class="card">
+<h2>How to Join?</h2>
+<ol>
+<li>Join the Discord server</li>
+<li>Tell me your Minecraft username</li>
+<li>Minecraft Bedrock Edition only</li>
+</ol>
+<p><strong>MINECRAFT BEDROCK</strong></p>
+</div>
+</section>
+
+<section class="hidden">
+<div class="card">
+<h2>Links</h2>
+<p>
+<a href="https://discord.gg/aJbZ5erXAy" target="_blank">Discord Server</a>
+</p>
+<br>
+<p>
+<a href="https://youtube.com/@mohammadmapingz" target="_blank">YouTube Channel</a>
+</p>
+</div>
+</section>
+
+<footer>
+<p>© MohammadMappingz Geomapping Media AS</p>
+<p>mohammadmappingzgeomapping@gmail.com</p>
+</footer>
+
+<script>
+
+window.addEventListener("load",()=>{
+document.getElementById("loader").style.opacity="0";
+setTimeout(()=>{document.getElementById("loader").style.display="none";},1000);
+});
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+document.querySelectorAll(".hidden").forEach(el=>observer.observe(el));
+
+window.onscroll=function(){
+let winScroll=document.body.scrollTop||document.documentElement.scrollTop;
+let height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+let scrolled=(winScroll/height)*100;
+document.getElementById("progress").style.width=scrolled+"%";
+};
+
+function toggleDark(){
+document.body.classList.toggle("dark");
+}
+
+const counters=document.querySelectorAll(".counter");
+counters.forEach(counter=>{
+const update=()=>{
+const target=+counter.getAttribute("data-target");
+const c=+counter.innerText;
+const inc=target/200;
+if(c<target){
+counter.innerText=Math.ceil(c+inc);
+setTimeout(update,10);
+}else{
+counter.innerText=target;
+}
+};
+update();
+});
+
+function toggleNews(id){
+const element=document.getElementById(id);
+element.style.display=element.style.display==="block"?"none":"block";
+}
+
+</script>
+
+</body>
+</html>
